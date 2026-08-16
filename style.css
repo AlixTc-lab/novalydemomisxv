@@ -48,10 +48,17 @@ html{
 
 body{
 
-     font-family:"Poppins",sans-serif;
-    background:#6b3766;
-    color:var(--gris);
-    overflow-x:hidden;
+   font-family: "Poppins", sans-serif;
+    color:var(--blanco);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), 0 0 10px rgba(11, 19, 43, 0.9);
+    background-image: url("fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0;
 }
 
 
@@ -73,7 +80,7 @@ body{
 
     overflow:hidden;
 
-    background-image:url("hero3.png");
+    background-image:url("hero.png");
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
@@ -291,7 +298,7 @@ body{
 
 .tiempo{
 
-    background:url("hero4.png") no-repeat center center/cover;
+    background:url("hero2.jpg") no-repeat center center/cover;
 
     backdrop-filter:blur(15px);
 
@@ -466,107 +473,86 @@ body{
 GALERÍA
 ======================================================*/
 
-
-.galeria{
-
-    padding:120px 20px;
-
+.galeria {
+    padding: 120px 20px;
+    position: relative;
+    z-index: 1;
 }
 
 
-.titulo-seccion{
-
-    max-width:700px;
-
-    margin:auto;
-
-    text-align:center;
-
-    margin-bottom:60px;
-
+.titulo-seccion {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: center;
 }
 
 
-.titulo-seccion span{
-
-    color:var(--lila-claro);
-
-    text-transform:uppercase;
-
-    letter-spacing:5px;
-
-    font-size:13px;
-
-    font-weight:600;
-
+.titulo-seccion span {
+    color: var(--blanco);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 13px;
+    font-weight: 600;
 }
 
 
-.titulo-seccion h2{
-
+.titulo-seccion h2 {
     margin-top:15px;
-
-    font-family:"Cormorant Garamond",serif;
-
+    font-family:"Cormorant Garamond", serif;
     font-size:55px;
-
-    color:#FFD700;
-
+    color:var(--blanco);
+   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), 0 0 10px rgba(11, 19, 43, 0.9);
+    
 }
 
 
-.titulo-seccion p{
-
+.titulo-seccion p {
     margin-top:20px;
-
-    color:var(--lila-claro);
-
+    color:var(--blanco-estelar);
+    opacity:.8;
 }
 
 
 
-/* GRID */
+/*======================================================
+CARRUSEL GALERÍA
+======================================================*/
 
-.galeria-grid{
 
+.miGaleria{
 
+    width:100%;
     max-width:1100px;
-
     margin:auto;
 
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:25px;
-
+    padding-bottom:70px;
 
 }
 
 
+.swiper-wrapper{
 
-.foto{
+    align-items:center;
+
+}
 
 
-    height:350px;
+.swiper-slide{
 
-    overflow:hidden;
+    height:520px;
 
     border-radius:30px;
 
-    background:white;
+    overflow:hidden;
 
-    box-shadow:var(--shadow);
+    background:#0b132b;
 
-    position:relative;
-
+    transition:.4s ease;
 
 }
 
 
-
-.foto img{
-
+.swiper-slide img{
 
     width:100%;
 
@@ -574,126 +560,172 @@ GALERÍA
 
     object-fit:cover;
 
-    transition:.6s;
+    display:block;
 
+}
+
+
+/* efecto suave foto central */
+
+.swiper-slide-active{
+
+    transform:scale(1.02);
 
 }
 
 
 
-.foto:hover img{
+/* puntos */
 
+.swiper-pagination-bullet{
 
-    transform:scale(1.12);
+    background:#FFD166;
 
-
-}
-
-
-
-/* fotos destacadas */
-
-.foto.grande{
-
-
-    height:450px;
-
+    opacity:.7;
 
 }
 
 
+.swiper-pagination-bullet-active{
 
-/* efecto brillo */
+    width:28px;
 
-.foto::after{
-
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-
-        135deg,
-
-        rgba(255,255,255,.35),
-
-        transparent
-
-    );
-
-
-    opacity:0;
-
-    transition:.4s;
-
-
-}
-
-
-
-.foto:hover::after{
-
+    border-radius:10px;
 
     opacity:1;
 
-
 }
 
 
 
-/* RESPONSIVE */
+/*======================================================
+TABLET
+======================================================*/
 
 
 @media(max-width:900px){
 
+    .miGaleria{
 
-.galeria-grid{
+        max-width:95%;
+
+    }
 
 
-    grid-template-columns:repeat(2,1fr);
+    .swiper-slide{
 
+        height:420px;
+
+    }
 
 }
 
 
-}
+
+/*======================================================
+CELULAR
+======================================================*/
 
 
 @media(max-width:600px){
 
 
-.titulo-seccion h2{
+    .titulo-seccion h2{
+
+        font-size:40px;
+
+    }
 
 
-    font-size:40px;
+    .miGaleria{
+
+        max-width:100%;
+
+        padding-bottom:50px;
+
+    }
+
+
+    .swiper-slide{
+
+        height:330px;
+
+        border-radius:20px;
+
+    }
+
+
+    .swiper-slide-active{
+
+        transform:scale(1);
+
+    }
 
 
 }
 
 
-.galeria-grid{
+
+/*======================================================
+PANTALLAS GRANDES
+======================================================*/
 
 
-    grid-template-columns:1fr;
+@media(min-width:1400px){
 
+
+    .miGaleria{
+
+        max-width:1200px;
+
+    }
+
+
+    .swiper-slide{
+
+        height:560px;
+
+    }
 
 }
 
+/*======================================================
+FLECHAS DE NAVEGACIÓN SWIPER
+======================================================*/
 
-.foto,
-.foto.grande{
-
-
-    height:380px;
-
-
+.swiper-button-next,
+.swiper-button-prev {
+    color: #FFD166 !important; /* Color de la flecha (combina con tus puntos) */
+    background: rgba(11, 19, 43, 0.6); /* Fondo oscuro translúcido */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
 }
 
-
+/* Cambiar tamaño del ícono interno de la flecha */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 18px;
+    font-weight: bold;
 }
+
+/* Efecto al pasar el mouse por encima */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: rgba(11, 19, 43, 0.9);
+    transform: scale(1.1);
+}
+
+/* Opcional: Ocultar flechas en celulares pequeños para que no estorben */
+@media(max-width: 600px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+
 
 /*======================================================
 LUGARES
@@ -728,9 +760,9 @@ LUGARES
 
 .lugar-card{
 
-    background:url("hero4.png") no-repeat center center/cover;
+    background:url("hero2.jpg") no-repeat center center/cover;
 
-    backdrop-filter:blur(18px);
+   
 
     border-radius:35px;
 
@@ -744,35 +776,6 @@ LUGARES
 
 }
 
-.lugar-card::before {
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:linear-gradient(
-        rgba(255,255,255,.12),
-        rgba(255,255,255,.20),
-        rgba(255,255,255,.30)
-    );
-
-    backdrop-filter:blur(2px);
-    -webkit-backdrop-filter:blur(2px);
-
-    z-index:0;
-}
-
-
-.lugar-card > * {
-    position:relative;
-    z-index:1;
-}
-
-
-.lugar-card:hover{
-
-    transform:translateY(-10px);
-
-}
 
 
 
@@ -1010,7 +1013,7 @@ PADRES Y PADRINOS
      position: relative;
     overflow: hidden;
 
-    background:url("hero5.png") no-repeat center center/cover;
+    background:url("hero2.jpg") no-repeat center center/cover;
 
     backdrop-filter:blur(18px);
 
@@ -1040,30 +1043,7 @@ PADRES Y PADRINOS
 
 
 
-.familia-card::before{
 
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:linear-gradient(
-        rgba(255,255,255,.10),
-        rgba(255,255,255,.18),
-        rgba(255,255,255,.25)
-    );
-
-    backdrop-filter:blur(2px);
-    -webkit-backdrop-filter:blur(2px);
-
-    z-index:0;
-
-}
-
-
-.familia-card > * {
-    position:relative;
-    z-index:1;
-}
 
 .decoracion{
 
@@ -1252,7 +1232,7 @@ MESA DE REGALOS
 
     padding:70px 50px;
 
-    background:url("hero3.png") no-repeat center center/cover;
+    background:url("hero2.jpg") no-repeat center center/cover;
 
     border-radius:45px;
 
@@ -1262,28 +1242,6 @@ MESA DE REGALOS
 }
 
 
-.regalos-card::before {
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:linear-gradient(
-        rgba(255,255,255,.12),
-        rgba(255,255,255,.20),
-        rgba(255,255,255,.30)
-    );
-
-    backdrop-filter:blur(2px);
-    -webkit-backdrop-filter:blur(2px);
-
-    z-index:0;
-}
-
-
-.regalos-card > * {
-    position:relative;
-    z-index:1;
-}
 
 
 
@@ -1489,7 +1447,7 @@ CONFIRMACION
     position:relative;
     overflow:hidden;
 
-    background:url("hero5.png") no-repeat center center/cover;
+    background:url("hero2.jpg") no-repeat center center/cover;
 
     padding:45px 30px;
 
@@ -1502,29 +1460,6 @@ CONFIRMACION
     border:1px solid rgba(255,255,255,.8);
 }
 
-
-.accion-card::before {
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:linear-gradient(
-        rgba(255,255,255,.12),
-        rgba(255,255,255,.20),
-        rgba(255,255,255,.30)
-    );
-
-    backdrop-filter:blur(2px);
-    -webkit-backdrop-filter:blur(2px);
-
-    z-index:0;
-}
-
-
-.accion-card > * {
-    position:relative;
-    z-index:1;
-}
 
 
 
@@ -1608,9 +1543,9 @@ CONFIRMACION
 
     padding:45px;
 
-    background:url("hero5.png") no-repeat center center/cover;
+    background:url("hero2.jpg") no-repeat center center/cover;
 
-    backdrop-filter:blur(20px);
+   
 
     border-radius:35px;
 
@@ -1744,9 +1679,9 @@ QR FOTOS
 
     padding:65px 45px;
 
-    background:url("hero4.png") no-repeat center center/cover;
+    background:url("hero2.jpg") no-repeat center center/cover;
 
-    backdrop-filter:blur(20px);
+  
 
     border-radius:45px;
 
@@ -1758,28 +1693,6 @@ QR FOTOS
 
 
 
-.qr-card::before {
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:linear-gradient(
-        rgba(255,255,255,.12),
-        rgba(255,255,255,.20),
-        rgba(255,255,255,.30)
-    );
-
-    backdrop-filter:blur(2px);
-    -webkit-backdrop-filter:blur(2px);
-
-    z-index:0;
-}
-
-
-.qr-card> * {
-    position:relative;
-    z-index:1;
-}
 
 
 .qr-icono{
@@ -1964,7 +1877,7 @@ CIERRE FINAL
 
     align-items:center;
 
-    background: var(--morado);
+  
 
 }
 
@@ -1980,7 +1893,7 @@ CIERRE FINAL
 
     padding:70px 50px;
 
-    background:url("hero6.png") no-repeat center center/cover;
+    background:url("hero2.jpg") no-repeat center center/cover;
 
     backdrop-filter:blur(20px);
 
@@ -2234,7 +2147,7 @@ CIERRE FINAL
 
     padding:70px 50px;
 
-    background:url("hero4.png") no-repeat center center/cover;
+    background:url("hero2.jpg") no-repeat center center/cover;
 
     border-radius:45px;
 
@@ -2467,161 +2380,77 @@ left:-8px;
 
 
 
-/*======================================================
-7. ANIMACIONES*/
-/*======================================================
-LUCIÉRNAGAS / BRILLOS MÁGICOS
-======================================================*/
 
-.luciernagas{
+/* ===== LUCIÉRNAGAS (VERSIÓN SEGURA) ===== */
+.stars{
     position:fixed;
     inset:0;
     pointer-events:none;
-    overflow:hidden;
-    z-index:9999;
-
-    /* Hace que todo el conjunto brille más */
-    filter:drop-shadow(0 0 20px #c66cff);
+    z-index:9999; /* 🔥 ARRIBA DE TODO */
 }
 
-.luciernagas span{
-
+.star{
     position:absolute;
 
-    width:12px;
-    height:12px;
+    width:4px;
+    height:4px;
 
+    background:#fff;
     border-radius:50%;
 
-    background:radial-gradient(circle,#ffffff 0%,#fff6cc 35%,#d889ff 70%,transparent 100%);
-
     box-shadow:
-        0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 40px #ffdfff,
-        0 0 70px #d36dff,
-        0 0 110px #b84dff,
-        0 0 160px #962eff;
+        0 0 6px #fff,
+        0 0 12px rgba(212,175,55,.9),
+        0 0 24px rgba(212,175,55,.7),
+        0 0 36px rgba(212,175,55,.4);
 
-    opacity:1;
+    opacity:1; /* 🔥 IMPORTANTE */
 
-    animation:
-        subir 7s infinite ease-in-out,
-        parpadeo 1s infinite alternate;
+    animation: floatStar linear infinite;
 }
 
-
-/* Tamaños diferentes */
-
-.luciernagas span:nth-child(3n){
-    width:8px;
-    height:8px;
-}
-
-.luciernagas span:nth-child(3n+1){
-    width:12px;
-    height:12px;
-}
-
-.luciernagas span:nth-child(3n+2){
-    width:16px;
-    height:16px;
-}
-
-
-/* Posiciones */
-
-.luciernagas span:nth-child(1){left:8%;top:90%;animation-delay:0s;}
-.luciernagas span:nth-child(2){left:20%;top:80%;animation-delay:1s;}
-.luciernagas span:nth-child(3){left:35%;top:95%;animation-delay:2s;}
-.luciernagas span:nth-child(4){left:50%;top:75%;animation-delay:3s;}
-.luciernagas span:nth-child(5){left:65%;top:90%;animation-delay:4s;}
-.luciernagas span:nth-child(6){left:80%;top:70%;animation-delay:5s;}
-.luciernagas span:nth-child(7){left:92%;top:85%;animation-delay:2.5s;}
-.luciernagas span:nth-child(8){left:45%;top:60%;animation-delay:6s;}
-.luciernagas span:nth-child(9){left:15%;top:45%;animation-delay:4.5s;}
-.luciernagas span:nth-child(10){left:75%;top:35%;animation-delay:7s;}
-
-
-/* Movimiento en zigzag */
-
-@keyframes subir{
-
+/* movimiento */
+@keyframes floatStar{
     0%{
-        transform:translate(0,120px) scale(.3) rotate(0deg);
-        opacity:0;
+        transform: translateY(110vh);
     }
-
-    10%{
-        opacity:1;
-    }
-
-    20%{
-        transform:translate(-20px,-80px) scale(.9);
-    }
-
-    35%{
-        transform:translate(25px,-220px) scale(1.1);
-    }
-
-    50%{
-        transform:translate(-30px,-420px) scale(.95);
-    }
-
-    65%{
-        transform:translate(20px,-620px) scale(1.15);
-    }
-
-    80%{
-        transform:translate(-15px,-780px) scale(.9);
-        opacity:1;
-    }
-
     100%{
-        transform:translate(30px,-980px) scale(.3);
-        opacity:0;
+        transform: translateY(-120vh);
     }
-
 }
 
 
-/* Parpadeo intenso */
 
-@keyframes parpadeo{
+.seccion-imagen {
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto;
+    box-sizing: border-box;
+}
 
-    0%{
-        opacity:.15;
-        filter:brightness(.4);
+.seccion-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+}
+
+@media (max-width: 768px) {
+    .seccion-imagen {
+        width: 96%;
+        margin: 25px auto;
     }
 
-    15%{
-        opacity:.9;
-        filter:brightness(1.5);
+    .seccion-imagen img {
+        border-radius: 20px;
     }
+}
 
-    30%{
-        opacity:.4;
-        filter:brightness(.8);
-    }
-
-    45%{
-        opacity:1;
-        filter:brightness(2.5);
-    }
-
-    60%{
-        opacity:.5;
-        filter:brightness(1);
-    }
-
-    80%{
-        opacity:1;
-        filter:brightness(3);
-    }
-
-    100%{
-        opacity:.25;
-        filter:brightness(.5);
-    }
-
+/* VIDEOS */
+video {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
 }

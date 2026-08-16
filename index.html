@@ -12,10 +12,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
+
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
 </head>
 
 <body>
-
+ <div class="stars"></div>
     <!-- Música -->
 <audio id="bg-music" loop>
     <source src="amor.mp3" type="audio/mpeg">
@@ -24,25 +29,7 @@
 <button id="music-btn">
     🎵
 </button>
-<!--======================================================
-PETALOS ACUARELA
-======================================================-->
 
-<div class="luciernagas">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-     <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
 
 <!--======================================================
 HERO
@@ -50,22 +37,11 @@ HERO
 
 <section class="hero">
 
-    <div class="overlay"></div>
+
 
     <div class="hero-content">
 
-         <h1 class="nombre">Daniela</h1>
-
-        <!-- Bloque de invitación y XV -->
-       
-              <p > MIS</p>
-            <h2 class="subtitulo-xv">XV</h2>
-        <p > AÑOS</p>
-<h2 class="subtitulo-xv"> ✧15 ✧</h2>
-  <p > DE MAYO </p>
-   <h1 class=>novalydesigner</h1>
-    </div>
-
+        
 </section>
 
 <!--======================================================
@@ -129,6 +105,10 @@ Colocar debajo del HERO
 
 </section>
 
+<video width="80%" autoplay muted loop playsinline>
+  <source src="VI.mp4" type="video/mp4">
+</video>
+
 
 <!--======================================================
 GALERÍA DE FOTOS
@@ -153,34 +133,40 @@ GALERÍA DE FOTOS
     </div>
 
 
-    <div class="galeria-grid">
+   <div class="swiper miGaleria">
 
+        <div class="swiper-wrapper">
 
+            <div class="swiper-slide">
+                <img src="f1.jpg">
+            </div>
 
+            <div class="swiper-slide">
+                <img src="f2.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="f3.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="f4.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="f5.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="f6.jpg">
+            </div>
 
-        <div class="foto">
-
-            <img src="foto4.png" alt="Foto">
+          
 
         </div>
 
+        <!-- Paginación (puntos) -->
+    <div class="swiper-pagination"></div>
 
-        <div class="foto">
-
-            <img src="foto5.png" alt="Foto">
-
-        </div>
-
-
-        <div class="foto">
-
-            <img src="foto6.png" alt="Foto">
-
-        </div>
-
-
-    </div>
-
+    <!-- Flechas de navegación (¡Asegúrate de agregarlas!) -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 
 </section>
 
@@ -933,7 +919,11 @@ CIERRE FINAL
 
 </section>
 
+<section class="seccion-imagen">
+    <img src="DC.png" alt="Descripción de la imagen">
+</section>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="script.js"></script>
 
 <footer class="footer">
