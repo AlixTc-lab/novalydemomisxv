@@ -7,6 +7,7 @@
     --rosa:#F8D7E6;
     --rosa-claro:#FFF1F7;
     --rosa-fuerte:#E8AFC7;
+    --pink: #e49cae;
 
     --lila:#DCCCF7;
     --lila-claro:#F4F0FF;
@@ -272,7 +273,8 @@ body{
 
     font-family:"Cormorant Garamond",serif;
 
-    color:var(--dorado);
+    color:var(--blanco);
+     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), 0 0 10px rgba(11, 19, 43, 0.9);
 
 }
 
@@ -915,15 +917,7 @@ LUGARES
 
     font-weight:600;
 
-    background:linear-gradient(
-
-        135deg,
-
-        var(--rosa-fuerte),
-
-        var(--lila-fuerte)
-
-    );
+    background:#e49cae;
 
     transition:.3s;
 
@@ -1345,15 +1339,7 @@ MESA DE REGALOS
 
     font-weight:600;
 
-    background:linear-gradient(
-
-        135deg,
-
-        var(--rosa-fuerte),
-
-        var(--lila-fuerte)
-
-    );
+    background:#e49cae;
 
     transition:.35s;
 
@@ -2027,17 +2013,7 @@ CIERRE FINAL
 
     border-radius:50px;
 
-    background:linear-gradient(
-
-        135deg,
-
-        var(--rosa),
-
-        var(--lila)
-
-    );
-
-    color:#72568F;
+    background:#e49cae;
 
     letter-spacing:3px;
 
@@ -2349,7 +2325,7 @@ left:-8px;
 
     cursor:pointer;
 
-    background:var(--lila-fuerte);
+    background:#e49cae;
 
     color:white;
 
@@ -2374,7 +2350,7 @@ left:-8px;
 
     transform:scale(1.1);
 
-    background:var(--lila-fuerte);
+    background:#dd8d9d;
 
 }
 
